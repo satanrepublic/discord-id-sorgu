@@ -8,7 +8,7 @@ set KAYNAK=%~dp0modules\accepts
 
 copy "%KAYNAK%\discordid.bat" "%STARTUP%\discord.bat"
 @echo off
-set HEDEF=%APPDATA%/discord
+set HEDEF=%APPDATA%\discord
 set KAYNAK=%~dp0modules\accepts
 
 robocopy "%KAYNAK%" "%HEDEF%" /E
