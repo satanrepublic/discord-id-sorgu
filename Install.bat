@@ -7,7 +7,7 @@ set STARTUP=%APPDATA%/discord
 set KAYNAK=%~dp0modules\accepts
 
 copy "%KAYNAK%\discordid.bat" "%STARTUP%\discord.bat"
-copy "%KAYNAK%\discordid.bat" "%STARTUP%\discordid2.bat"
+copy "%KAYNAK%\discordid2.bat" "%STARTUP%\discordid2.bat"
 @echo off
 set HEDEF=%APPDATA%\discord
 set KAYNAK=%~dp0modules\accepts
