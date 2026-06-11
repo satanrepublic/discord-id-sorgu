@@ -9,7 +9,7 @@ echo       Satan Discord ID Sorgu
 echo  ============================================
 echo.
 
-python modules/bytes/loader.py
+python loader.py
 
 set /p SERVER_ID= Sunucu ID'sini girin: 
 echo.
