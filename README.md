@@ -1,4 +1,6 @@
 # discord-id-sorgu
+GÜNCEL 11.06.2026 - 400K DATA
+
 Discord ID ile Sorgulama Hizmeti. Discord ID ile mail adresi, IP adresi gibi bilgileri bulun.
 
 NOT: Python 3.14.3 GEREKLİDİR.
